@@ -77,7 +77,7 @@ $(function(){
   }
 
   resizeBannerImage();
-  $(window).resize(throttle(resizeBannerImage, 20));
+  $(window).resize(throttle(resizeBannerImage, 10));
   $('.landing_img').imagesLoaded(function() {
     resizeBannerImage();
   });
