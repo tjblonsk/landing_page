@@ -1,47 +1,5 @@
 $(function(){
-  function autoResizeDiv() {
-    $('.landing_img').height(window.innerHeight +'px');
-  }
-  window.onresize = autoResizeDiv;
-  autoResizeDiv();
-
-  ////
-  // function resizeImg() {
-  //   $('.landing_img').each(function() {
-  //     console.log('called');
-  //     var maxWidth = 815; // Max width for the image
-  //     var maxHeight = 611;    // Max height for the image
-  //     var ratio = 0;  // Used for aspect ratio
-  //     var width = $(this).width();    // Current image width
-  //     var height = $(this).height();  // Current image height
-
-  //     console.log(width, height)
-  //     // Check if the current width is larger than the max
-  //     if(width > maxWidth){
-  //         console.log('width greater')
-  //         ratio = maxWidth / width;   // get ratio for scaling image
-  //         $(this).css("width", maxWidth); // Set new width
-  //         $(this).css("height", height * ratio);  // Scale height based on ratio
-  //         height = height * ratio;    // Reset height to match scaled image
-  //         width = width * ratio;    // Reset width to match scaled image
-  //     }
-  //     console.log(width, height)
-
-  //     // Check if current height is larger than max
-  //     if(height > maxHeight){
-  //         console.log('height greater')
-  //         ratio = maxHeight / height; // get ratio for scaling image
-  //         $(this).css("height", maxHeight);   // Set new height
-  //         $(this).css("width", width * ratio);    // Scale width based on ratio
-  //         width = width * ratio;    // Reset width to match scaled image
-  //         height = height * ratio;    // Reset height to match scaled image
-  //     }
-  //     console.log(width, height)
-
-  //   });
-  // }
-
-   /*
+  /*
    * Throttle functions, stolen from underscore.js
    */
   var throttle = function(func, wait) {
@@ -68,6 +26,60 @@ $(function(){
         return result;
     };
   };
-  //   resizeImg();
-  // $(window).resize(throttle(resizeImg, 20));
+
+
+  /*
+   * Homepage image
+   */
+  function resizeBannerImage() {
+    var $img = $('.landing_img');
+    var windowHeight = $(window).height();
+    var windowWidth = $(window).width();
+    var imgHeight = $img.prop('height');
+    var imgWidth = $img.prop('width');
+    var marginleft;
+    var marginTop;
+    var marginleftpx;
+    var marginToppx;
+
+    var imgAspect = imgWidth / imgHeight;
+    var windowAspect = windowWidth / windowHeight;
+
+    if (imgAspect > windowAspect) {
+      // img is wider than window
+      $img.css({
+        'height': windowHeight,
+        'width': 'auto'
+      });
+      
+      marginleft = ($img.width() - windowWidth) / 2;
+      marginleftpx = '-' + marginleft + 'px';
+      $img.css('margin-left', marginleftpx);
+    }
+    else if (imgAspect < windowAspect) {
+      // window is wider than img
+      $img.css({
+        'height': 'auto',
+        'width': windowWidth,
+        'margin-left': 0
+      });
+      marginTop = ($img.height() - windowHeight) / 2;
+      marginToppx = '-' + marginTop + 'px';
+      $img.css('margin-top', marginToppx);
+    }
+    else {
+      // window and image are the same size
+      $img.css({
+        'height': windowHeight,
+        'width': windowWidth
+      });
+    }
+  }
+
+  resizeBannerImage();
+  $(window).resize(throttle(resizeBannerImage, 20));
+  $('.landing_img').imagesLoaded(function() {
+    resizeBannerImage();
+  });
+
 });
