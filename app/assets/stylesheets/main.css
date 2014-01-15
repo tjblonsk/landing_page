@@ -1,0 +1,13 @@
+div.main {
+  overflow: hidden;
+  margin: 0;
+}
+
+img.landing_img {
+  height: auto;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+}
