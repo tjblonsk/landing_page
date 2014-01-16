@@ -9,6 +9,13 @@ class SignupsController < ApplicationController
   end
 
   def dup
+    respond_to do |format|
+      if Signup.where(username: params[:username]).empty?
+        format.js { render nothing: true }
+      else
+        format.js { render nothing: true, status: :unprocessable_entity }
+      end
+    end
   end
 
 

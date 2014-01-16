@@ -12,7 +12,8 @@
   var EmailValidator = function($el) {
     this.$el = $el;
     this.valid = function() {
-      // TODO: return true if email is valid
+      var re = /^.+\@.+\..+/;
+      return re.test(this.$el.val());
     }
   }
 
@@ -20,6 +21,8 @@
     this.$el = $el;
     this.valid = function() {
       // TODO: send ajax call to signups#dup
+      return $.post('signups/dup',{username: $('#signup_username').val()}, function(data){}, 'JSON');
+
       // TODO: return xhr promise
     }
   }
@@ -31,7 +34,7 @@
       this.bind_events();
 
       // TODO: replace these selectors with appropriate selectors for the input fields
-      this.email_validator = new EmailValidator(this.$el.find('.email_field'));
+      this.email_validator = new EmailValidator(this.$el.find('#signup_email'));
       this.username_validator = new UsernameValidator(this.$el.find('.username_field'));
 
       this.render_stage();
@@ -69,7 +72,7 @@
 
     claim_username: function() {
       // TODO: return true if the box checked to reserve username
-    }
+    },
 
 
     // form stage should be set in each handler to: %w{ blank email_entered form_submitted }
@@ -90,7 +93,7 @@
 
     enter_username: function() {
       // TODO: send tweet
-      
+
       this.submit_form();
     },
 

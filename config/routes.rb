@@ -1,5 +1,5 @@
 LandingPage::Application.routes.draw do
-  get "signup/dup"
+  post "signups/dup" => 'signups#dup'
   root 'home#index'
 
   resources :signups, only: :create
