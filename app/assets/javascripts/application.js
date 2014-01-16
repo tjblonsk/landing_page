@@ -13,4 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+//= require jquery.tweetAction
+//= require jquery.imagesloaded.min
+//= require main
+//= require form

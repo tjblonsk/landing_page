@@ -47,6 +47,19 @@
       });
 
       // TODO: (possibly) bind click events for submit buttons
+
+      // TODO: make sure there is a .send_tweet element. It should be hidden and should
+      // not be the same element the you click to submit the username
+      $('.send_tweet').tweetAction({
+        text: 'I just reserved my username for Steelos.com',
+        url: 'http://steelos.com',
+        via: 'steelos',
+        related: 'steelos'
+      },function(){
+        self.submit_form();
+      });
+
+
     },
 
     handle_submit: function(e) {
@@ -92,9 +105,7 @@
     },
 
     enter_username: function() {
-      // TODO: send tweet
-
-      this.submit_form();
+      this.$el.find('.send_tweet').trigger('click');
     },
 
     submit_form: function() {
