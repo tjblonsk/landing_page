@@ -1,2 +1,13 @@
 %div.main
-  = image_tag("/assets/landing_page.png", size: '1280x960', class: 'landing_img')
+  %div.container
+    = image_tag("/assets/landing_page.png", size: '1280x960', class: 'landing_img')
+    %div.main_footer
+    %img.s_img(src="/assets/S.png")
+    %div.text_container
+      %span.main_text
+        The new kingdom of style.
+      %br
+      %span.minor_text
+        The designers dream place to open an online boutique, and the trendsetters secret go-to store.
+    %div.input_box
+      %input{:type=>"text"}
