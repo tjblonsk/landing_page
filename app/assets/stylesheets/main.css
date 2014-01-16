@@ -67,6 +67,9 @@ div.text_container {
 
 div.input_box {
   bottom: 0;
+  color: white;
+  font-family: 'News Cycle', sans-serif;
+  font-size: 15px;
   height: 30px;
   margin-bottom: 43px;
   margin-right: 86px;
@@ -79,13 +82,14 @@ div.input_box {
 div.input_box input {
   background-color: #000000;
   border: 1px solid white;
-  color: #000000;
+  color: white;
+  font-size: 25px;
   height: 30px;
   opacity: .38;
-  /*outline: none;*/
+  outline: none;
   width: 400px;
 }
 
 input:focus {
-  font-color: white;
+  color: white;
 }

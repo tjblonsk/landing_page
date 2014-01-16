@@ -51,7 +51,7 @@ $(function(){
         'height': windowHeight,
         'width': 'auto'
       });
-      
+
       marginleft = ($img.width() - windowWidth) / 2;
       marginleftpx = '-' + marginleft + 'px';
       $img.css('margin-left', marginleftpx);

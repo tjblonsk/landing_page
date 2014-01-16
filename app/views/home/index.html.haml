@@ -1,14 +1,18 @@
 %div.main
   %div.container
     = image_tag("/assets/landing_page.png", size: '1280x960', class: 'landing_img')
-    %div.main_footer
-    %img.s_img(src="/assets/S.png")
-    %div.text_container
-      %span.main_text
-        The new kingdom of style.
-      %br
-      %span.minor_text
-        The designers dream place to open an online boutique, and the trendsetters secret go-to store.
-    %div.input_box
-      %input{:type=>"text"}
-      %img.mail_icon(src="/assets/mail_icon.png")
+  %div.main_footer
+  %img.s_img(src="/assets/S.png")
+  %div.text_container
+    %span.main_text
+      The new kingdom of style.
+    %br
+    %span.minor_text
+      The designers dream place to open an online boutique, and the trendsetters secret go-to store.
+  %div.input_box
+    = form_for(@signup, remote: true) do |f|
+      = f.label "Toss us your email address and we'll keep you posted on our launch."
+      = f.text_field :email
+
+      %span.actions
+        = f.submit "Submit"
