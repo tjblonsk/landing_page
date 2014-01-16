@@ -1,6 +1,6 @@
 %div.main
   %div.container
-    = image_tag("/assets/landing_page.png", size: '1280x960', class: 'landing_img')
+    = image_tag("/assets/steelos-hi.jpg", class: 'landing_img')
   %div.main_footer
   %img.s_img(src="/assets/S.png")
   %div.text_container
@@ -11,11 +11,19 @@
       The designers dream place to open an online boutique, and the trendsetters secret go-to store.
   %div.input_box
     = form_for(@signup, remote: true) do |f|
-      = f.label "Toss us your email address and we'll keep you posted on our launch."
-      = f.text_field :email
+      .blank_section
+        = f.label "Toss us your email address and we'll keep you posted on our launch.", class: 'signup_email_label'
+        = f.text_field :email
+        = f.submit "Submit", class: 'signup_email_submit'
 
-      = f.label "Username for Twitter"
-      = f.text_field :username
+      %label.claim_username_label
+        %input.claim_username{type: 'checkbox'}
+        Want to reserve a username?
 
-      %span.actions
-        = f.submit "Submit"
+      .email_entered_section
+        = f.text_field :username
+        = f.label "Give us a tweet and the username is yours"
+        = f.submit "Submit", class: 'signup_username_submit'
+
+      .thankyou Thank you for your submission. We'll email you when we're ready!
+
