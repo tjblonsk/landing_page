@@ -20,10 +20,7 @@
   var UsernameValidator = function($el) {
     this.$el = $el;
     this.valid = function() {
-      // TODO: send ajax call to signups#dup
       return $.post('signups/dup',{username: $('#signup_username').val()}, function(data){}, 'JSON');
-
-      // TODO: return xhr promise
     }
   }
 
