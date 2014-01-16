@@ -1,4 +1,5 @@
 html, body { height: 100%; overflow: hidden; width: 100%; }
+
 div.main {
   margin: 0;
   overflow: hidden;
@@ -81,5 +82,10 @@ div.input_box input {
   color: #000000;
   height: 30px;
   opacity: .38;
+  /*outline: none;*/
   width: 400px;
+}
+
+input:focus {
+  font-color: white;
 }
