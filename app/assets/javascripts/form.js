@@ -5,6 +5,21 @@
 // handle tweet
 // submit form
 
+  function fireEvent(element,event) {
+    if (document.createEvent) {
+      // dispatch for firefox + others
+      var evt = document.createEvent("HTMLEvents");
+      evt.initEvent(event, true, true ); // event type,bubbling,cancelable
+      return !element.dispatchEvent(evt);
+    } else {
+      // dispatch for IE
+      var evt = document.createEventObject();
+      return element.fireEvent('on'+event,evt)
+    }
+  }
+
+
+
   /*
    * TODO: Validators should handle error state for the given element
    *       and handle eager validation once error has been triggered
@@ -63,12 +78,7 @@
         return false;
       });
 
-      $('.send_tweet').tweetAction({
-        text: 'I just reserved my username for Steelos.com',
-        url: 'http://steelos.com',
-        via: 'steelos',
-        related: 'steelos'
-      },function(){
+      twttr.events.bind('tweet', function(event) {
         self.submit_form();
       });
 
@@ -136,7 +146,8 @@
     },
 
     enter_username: function() {
-      this.$el.find('.send_tweet').trigger('click');
+      var tweeter = this.$el.find('.send_tweet a')[0];
+      fireEvent(tweeter, 'click');
     },
 
     submit_form: function() {
