@@ -15,8 +15,8 @@
       .blank_section
         = f.label "Toss us your email address and we'll keep you posted on our launch.", class: 'signup_email_label'
         .email_field
-          = f.text_field :email
-          = f.submit '', class: "mail_icon"
+          = f.text_field :email, class: 'email_input_field'
+          = f.submit 'Submit', class: 'mail_icon'
 
       %label.claim_username_label
         %input.claim_username{type: 'checkbox'}

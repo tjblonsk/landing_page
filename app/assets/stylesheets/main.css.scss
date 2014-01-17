@@ -71,7 +71,7 @@ span.minor_text {
 div.text_container {
   bottom: 0;
   float: left;
-  height: 50px;
+  height: 60px;
   margin-left: 150px;
   margin-bottom: 50px;
   position: absolute;
@@ -83,7 +83,7 @@ div.input_box {
   color: white;
   font-family: 'News Cycle', sans-serif;
   font-size: 15px;
-  height: 30px;
+  height: 50px;
   margin-bottom: 50px;
   margin-right: 86px;
   position: absolute;
@@ -92,7 +92,7 @@ div.input_box {
   z-index: 100;
 }
 
-div.input_box input {
+.email_input_field {
   background-color: #000000;
   border: 1px solid white;
   color: white;
@@ -131,10 +131,29 @@ img.mail_icon {
   display: none;
 }
 
+.blank_section {
+  height: 50px;
+}
+
+.email_field .mail_icon {
+  background: url(/assets/mail_icons.png) no-repeat center top;
+  border: 0;
+  right: 0;
+  height: 15px;
+  outline: none;
+  width: 25px;
+  position: absolute;
+  text-indent: -10000px;
+}
+
+.email_field input[type=text] {
+  position: absolute;
+}
+
 .error {
-  color: red;
+  background-position: center bottom;
 }
 
 .valid {
-  color: green;
+  background-position: center center
 }
