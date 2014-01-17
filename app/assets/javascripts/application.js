@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require jquery.tweetAction
 //= require jquery.imagesloaded.min
 //= require main

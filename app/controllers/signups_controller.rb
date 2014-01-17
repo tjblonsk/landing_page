@@ -4,16 +4,16 @@ class SignupsController < ApplicationController
 
     respond_to do |format|
       format.html {}
-      format.js {}
+      format.js { render json: @signup }
     end
   end
 
   def dup
     respond_to do |format|
       if Signup.where(username: params[:username]).empty?
-        format.js { render nothing: true }
+        format.js { render json: { status: 'OK' } }
       else
-        format.js { render nothing: true, status: :unprocessable_entity }
+        format.js { render json: { status: 'DUP' }, status: :unprocessable_entity }
       end
     end
   end

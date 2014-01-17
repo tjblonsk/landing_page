@@ -55,6 +55,20 @@ span.minor_text {
   font-size: 15px;
 }
 
+.blank {
+  .blank_section, .claim_username_label { display: block; }
+  .email_entered_section, .thankyou { display: none; }
+}
+.email_entered {
+  .email_entered_section .claim_username_label { display: block; }
+  .blank_section, .thankyou { display: none; }
+}
+.form_submitted {
+  .thankyou { display: block; }
+  .blank_section, .email_entered_section, .claim_username_label { display: none; }
+}
+.send_tweet { display: none; }
+
 div.text_container {
   bottom: 0;
   float: left;

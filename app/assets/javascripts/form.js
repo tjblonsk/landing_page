@@ -30,7 +30,6 @@
       this.$el = $('form');
       this.bind_events();
 
-      // TODO: replace these selectors with appropriate selectors for the input fields
       this.email_validator = new EmailValidator(this.$el.find('#signup_email'));
       this.username_validator = new UsernameValidator(this.$el.find('.username_field'));
 
@@ -39,14 +38,14 @@
 
     bind_events: function() {
       var self = this;
-      this.$el.on('submit', function() {
+      this.$el.on('submit', function(e) {
+        e.preventDefault();
         self.handle_submit();
+        return false;
       });
 
       // TODO: (possibly) bind click events for submit buttons
 
-      // TODO: make sure there is a .send_tweet element. It should be hidden and should
-      // not be the same element the you click to submit the username
       $('.send_tweet').tweetAction({
         text: 'I just reserved my username for Steelos.com',
         url: 'http://steelos.com',
@@ -60,8 +59,7 @@
     },
 
     handle_submit: function(e) {
-      e.preventDefault();
-
+      var self = this;
       if (this.stage === 'blank') {
         // validate email
         if (this.email_validator.valid()) {
@@ -72,16 +70,18 @@
             this.submit_form();
           }
         }
+        return;
       }
       else if (this.stage === 'email_entered') {
-        this.username_validator.valid().success(function() {
-          this.enter_username();
+        this.username_validator.valid().done(function() {
+          self.enter_username();
         });
+        return;
       }
     },
 
     claim_username: function() {
-      // TODO: return true if the box checked to reserve username
+      return this.$el.find('.claim_username').first().is(':checked');
     },
 
 
@@ -89,7 +89,6 @@
     stage: 'blank',
 
     render_stage: function() {
-      // TODO: define styles that hide and show elements when the form has a given css class
       this.$el.removeClass('blank email_entered form_submitted');
       this.$el.addClass(this.stage);
     },
@@ -107,8 +106,12 @@
 
     submit_form: function() {
       var self = this;
-      // TODO: serialize and submit form
-      $.ajax({}).success(function() {
+      $.ajax({
+        url: '/signups',
+        type: 'POST',
+        data: self.$el.serialize(),
+        dataType: 'json'
+      }).done(function() {
         self.stage = 'form_submitted';
         // transition form to show submission confirmation
         self.render_stage();
