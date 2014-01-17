@@ -78,6 +78,14 @@
       this.$el.find('#signup_username').on('keyup', function() {
         self.username_validator.valid();
       });
+
+      this.$el.find('.claim_username').on('click', function() {
+        if (self.stage == 'email_entered') {
+          $(this).val('');
+          self.stage = 'blank';
+          self.render_stage();
+        }
+      });
     },
 
     handle_submit: function(e) {
