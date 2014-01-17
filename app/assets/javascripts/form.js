@@ -81,7 +81,7 @@
 
       this.$el.find('.claim_username').on('click', function() {
         if (self.stage == 'email_entered') {
-          $(this).val('');
+          self.$el.find('#signup_username').val('');
           self.stage = 'blank';
           self.render_stage();
         }
