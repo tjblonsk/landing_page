@@ -12,8 +12,18 @@
   var EmailValidator = function($el) {
     this.$el = $el;
     this.valid = function() {
-      var re = /^.+\@.+\..+/;
-      return re.test(this.$el.val());
+      var re = /^.+\@.+\..+/, valid, self = this;
+      valid = re.test(this.$el.val());
+      if (!valid) {
+        this.$el.siblings('.mail_icon').addClass('error').removeClass('valid');
+        this.$el.one('keyup', function() {
+          self.valid();
+        });
+      }
+      else {
+        this.$el.siblings('.mail_icon').removeClass('error').addClass('valid');
+      }
+      return valid;
     }
   }
 
@@ -31,7 +41,7 @@
       this.bind_events();
 
       this.email_validator = new EmailValidator(this.$el.find('#signup_email'));
-      this.username_validator = new UsernameValidator(this.$el.find('.username_field'));
+      this.username_validator = new UsernameValidator(this.$el.find('#signup_username'));
 
       this.render_stage();
     },

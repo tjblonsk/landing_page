@@ -55,20 +55,6 @@ span.minor_text {
   font-size: 15px;
 }
 
-.blank {
-  .blank_section, .claim_username_label { display: block; }
-  .email_entered_section, .thankyou { display: none; }
-}
-.email_entered {
-  .email_entered_section .claim_username_label { display: block; }
-  .blank_section, .thankyou { display: none; }
-}
-.form_submitted {
-  .thankyou { display: block; }
-  .blank_section, .email_entered_section, .claim_username_label { display: none; }
-}
-.send_tweet { display: none; }
-
 div.text_container {
   bottom: 0;
   float: left;
@@ -85,7 +71,7 @@ div.input_box {
   font-family: 'News Cycle', sans-serif;
   font-size: 15px;
   height: 30px;
-  margin-bottom: 50px;
+  margin-bottom: 300px;
   margin-right: 86px;
   position: absolute;
   right: 0;
@@ -108,32 +94,28 @@ input:focus {
   color: white;
 }
 
-img.mail_icon {
-  float: right;
-  height: 30px;
-  position: absolute;
-  right: 0;
-  width: 30px;
+.blank_section {
+  height: 70px;
 }
 
 .email_field {
   position: relative;
 }
 
-.email_field input {
+.email_field .mail_icon {
+  background: url(/assets/mail_icon.png) no-repeat;
+  right: 0;
+  height: 30px;
+  width: 30px;
   position: absolute;
 }
 
-.username_field {
-  display: none;
-}
-
-.actions {
-  display: none;
+.email_field input[type=text] {
+  position: absolute;
 }
 
 .error {
-  color: red;
+  background-color: red;
 }
 
 .valid {
