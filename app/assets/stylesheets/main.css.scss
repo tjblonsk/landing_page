@@ -56,12 +56,14 @@ span.minor_text {
 
 label { text-align: center; display: block; }
 
+.claim_username_label_temp { display: none; }
+
 .blank {
   .blank_section, .claim_username_label { display: block; }
   .email_entered_section, .thankyou { display: none; }
 }
 .email_entered {
-  .email_entered_section .claim_username_label { display: block; }
+  .email_entered_section, .claim_username_label { display: block; }
   .blank_section, .thankyou { display: none; }
 }
 .form_submitted {
@@ -207,4 +209,18 @@ input:focus {
 }
 .signup_username_error {
   display: none;
+}
+
+::-webkit-input-placeholder {
+  opacity: 0.4;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  opacity: 0.4;
+
+}
+:-ms-input-placeholder {
+  opacity: 0.4;
+}
+:-moz-placeholder { /* Firefox 18- */
+  opacity: 0.4;
 }

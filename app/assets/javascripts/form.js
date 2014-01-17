@@ -19,6 +19,7 @@
       }
       else {
         this.$el.siblings('.mail_icon').removeClass('error').addClass('valid');
+        $('.claim_username_label_temp').addClass('claim_username_label');
       }
       return valid;
     }

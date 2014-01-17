@@ -15,10 +15,10 @@
       .blank_section
         = f.label "Toss us your email address and we'll keep you posted on our launch.", class: 'signup_email_label'
         .email_field
-          = f.text_field :email, class: 'email_input_field'
+          = f.text_field :email, class: 'email_input_field', placeholder: 'email@example.com'
           = f.submit 'Submit', class: 'mail_icon'
 
-      %label.claim_username_label
+      %label.claim_username_label_temp
         %input.claim_username{type: 'checkbox'}
         Want to reserve a username?
 
