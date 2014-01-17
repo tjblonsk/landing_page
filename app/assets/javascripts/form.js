@@ -71,6 +71,10 @@
         self.submit_form();
       });
 
+      this.$el.find('#signup_email').on('focus', function() {
+        self.$el.find('.mail_icon').css('opacity', 1);
+      });
+
       this.$el.find('#signup_email').on('keyup', function() {
         self.email_validator.valid();
       });

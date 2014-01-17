@@ -2,7 +2,7 @@
   %div.container
     = image_tag("/assets/steelos-hi.jpg", class: 'landing_img')
   %div.main_footer
-  %img.s_img(src="/assets/S.png")
+  = link_to image_tag('/assets/S.png', class: 's_img'), root_url
   %div.text_container
     %span.main_text
       The new kingdom of style.
