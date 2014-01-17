@@ -157,16 +157,16 @@ input:focus {
 }
 
 .mail_icon {
-  background: url(/assets/mail_icons.png) no-repeat center top;
+  background: url(/assets/mail_icon_rounded.png) no-repeat center -1px;
   border: 0;
   right: 9px;
-  height: 15px;
+  height: 18px;
   opacity: 0.3;
   outline: none;
   position: absolute;
   text-indent: -10000px;
-  top: 8px;
-  width: 25px;
+  top: 6px;
+  width: 26px;
 }
 
 .email_field input[type=text] {
@@ -183,7 +183,7 @@ input:focus {
 }
 
 .mail_icon.error {
-  background-position: center bottom;
+  background-position: center -63px;
 }
 
 .mail_icon.valid {
