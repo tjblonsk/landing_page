@@ -1,4 +1,4 @@
-html, body { height: 100%; overflow: hidden; width: 100%; }
+html, body { height: 100%; overflow: hidden; width: 100%; -webkit-font-smoothing: antialiased; }
 
 div.main {
   margin: 0;
@@ -23,7 +23,7 @@ div.container {
 div.main_footer {
   background-color: #000000;
   bottom: 0;
-  height: 100px;
+  height: 128px;
   left: 0;
   opacity: 0.32;
   position: absolute;
@@ -32,12 +32,11 @@ div.main_footer {
 }
 
 img.s_img {
-  /* TODO resize image in illustrator (128px) */
   bottom: 0;
   left: 0;
-  height: 100px;
+  height: 128px;
   position: absolute;
-  width: 100px;
+  width: 128px;
   z-index: 100;
 }
 
