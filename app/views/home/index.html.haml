@@ -24,7 +24,8 @@
 
       .email_entered_section
         = f.text_field :username
-        = f.label "Give us a tweet and the username is yours"
+        = f.label "Give us a tweet and the username is yours", class: 'signup_username_label'
+        = f.label "That username is already claimed!", class: 'signup_username_error'
         = f.submit "Submit", class: 'signup_username_submit'
 
       .thankyou Thank you for your submission. We'll email you when we're ready!

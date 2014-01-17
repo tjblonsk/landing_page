@@ -22,10 +22,10 @@ div.container {
 
 div.main_footer {
   background-color: #000000;
+  background-color: rgba(0, 0, 0, .38);
   bottom: 0;
   height: 128px;
   left: 0;
-  opacity: 0.32;
   position: absolute;
   width: 100%;
   z-index: 10;
@@ -54,6 +54,8 @@ span.minor_text {
   font-size: 15px;
 }
 
+label { text-align: center; display: block; }
+
 .blank {
   .blank_section, .claim_username_label { display: block; }
   .email_entered_section, .thankyou { display: none; }
@@ -68,6 +70,7 @@ span.minor_text {
 }
 .send_tweet { display: none; }
 
+.email_entered_section { position: relative; width: 402px; }
 div.text_container {
   bottom: 0;
   float: left;
@@ -92,24 +95,39 @@ div.input_box {
   z-index: 100;
 }
 
-.email_input_field {
+.email_input_field, #signup_username {
   background-color: #000000;
-  border: 1px solid white;
+  background-color: rgba(0, 0, 0, .38);
+  border: 0;
   color: white;
   font-size: 25px;
   height: 30px;
-  opacity: .38;
   outline: none;
+  text-align: center;
+  width: 400px;
+}
+.thankyou {
+  background-color: #000000;
+  background-color: rgba(0, 0, 0, .38);
+  color: white;
+  margin-top: 18px;
+  padding: 4px 0 7px;
+  text-align: center;
   width: 400px;
 }
 
+input {
+  /*font-family: 'News Cycle', sans-serif;*/
+}
 input:focus {
   color: white;
 }
 
-img.mail_icon {
+.mail_icon {
+  cursor: pointer;
   float: right;
   height: 30px;
+  padding: 0;
   position: absolute;
   right: 0;
   width: 30px;
@@ -132,28 +150,60 @@ img.mail_icon {
 }
 
 .blank_section {
-  height: 50px;
+  height: 52px;
+  width: 402px;
 }
 
-.email_field .mail_icon {
+.mail_icon {
   background: url(/assets/mail_icons.png) no-repeat center top;
   border: 0;
-  right: 0;
+  right: 5px;
   height: 15px;
   outline: none;
   width: 25px;
   position: absolute;
   text-indent: -10000px;
+  top: 9px;
 }
 
 .email_field input[type=text] {
   position: absolute;
 }
 
-.error {
+.claim_username_label {
+  text-align: center;
+}
+.claim_username {
+  background: #fff;
+  border: 0;
+  -webkit-appearance: none;
+}
+
+.mail_icon.error {
   background-position: center bottom;
 }
 
-.valid {
-  background-position: center center
+.mail_icon.valid {
+  background-position: center -32px;
+}
+
+.signup_username_submit {
+  background: url('/assets/Twitter_logo_white.png') no-repeat left top;
+  border: 0;
+  cursor: pointer;
+  height: 23px;
+  position: absolute;
+  right: 3px;
+  text-indent: -10000px;
+  top: 5px;
+  width: 27px;
+  &.error {
+    background-image: url('/assets/Twitter_logo_red.png');
+  }
+  &.valid {
+    background-image: url('/assets/Twitter_logo_blue.png');
+  }
+}
+.signup_username_error {
+  display: none;
 }

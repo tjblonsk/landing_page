@@ -14,5 +14,6 @@
 //= require jquery_ujs
 //= require jquery.tweetAction
 //= require jquery.imagesloaded.min
+//= require radio
 //= require main
 //= require form

@@ -1,4 +1,7 @@
 $(function(){
+
+  styleButtons();
+
   /*
    * Throttle functions, stolen from underscore.js
    */

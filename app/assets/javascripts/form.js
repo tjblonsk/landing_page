@@ -16,9 +16,6 @@
       valid = re.test(this.$el.val());
       if (!valid) {
         this.$el.siblings('.mail_icon').addClass('error').removeClass('valid');
-        this.$el.one('keyup', function() {
-          self.valid();
-        });
       }
       else {
         this.$el.siblings('.mail_icon').removeClass('error').addClass('valid');
@@ -30,7 +27,18 @@
   var UsernameValidator = function($el) {
     this.$el = $el;
     this.valid = function() {
-      return $.post('signups/dup',{username: $('#signup_username').val()}, function(data){}, 'JSON');
+      var self = this;
+      return $.post('signups/dup',{username: $('#signup_username').val()}, function(data){}, 'JSON')
+        .done(function() {
+          self.$el.siblings('.signup_username_submit').removeClass('error').addClass('valid');
+          self.$el.siblings('.signup_username_label').show();
+          self.$el.siblings('.signup_username_error').hide();
+        })
+        .fail(function() {
+          self.$el.siblings('.signup_username_submit').addClass('error').removeClass('valid');
+          self.$el.siblings('.signup_username_label').hide();
+          self.$el.siblings('.signup_username_error').show();
+        });
     }
   }
 
@@ -54,8 +62,6 @@
         return false;
       });
 
-      // TODO: (possibly) bind click events for submit buttons
-
       $('.send_tweet').tweetAction({
         text: 'I just reserved my username for Steelos.com',
         url: 'http://steelos.com',
@@ -65,7 +71,13 @@
         self.submit_form();
       });
 
+      this.$el.find('#signup_email').on('keyup', function() {
+        self.email_validator.valid();
+      });
 
+      this.$el.find('#signup_username').on('keyup', function() {
+        self.username_validator.valid();
+      });
     },
 
     handle_submit: function(e) {
