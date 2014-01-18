@@ -12,7 +12,7 @@
   %div.input_box
     = form_for(@signup, remote: true) do |f|
       .send_tweet
-        = link_to 'Tweet this', 'http://twitter.com/intent/tweet?text=I+just+reserved+my+username+at+steelos.com,+the+new+kingdom+of+style&via=steelos&related=steelos'
+        = link_to 'Tweet this', 'http://twitter.com/intent/tweet?text=I+just+reserved+my+username+at+steelos.com,+the+new+kingdom+of+style.&via=steelos&related=steelos'
       .blank_section
         = f.label "Toss us your email address and we'll keep you posted on our launch.", class: 'signup_email_label'
         .email_field
