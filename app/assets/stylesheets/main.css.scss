@@ -24,7 +24,7 @@ div.main_footer {
   background-color: #000000;
   background-color: rgba(0, 0, 0, .38);
   bottom: 0;
-  height: 115px;
+  height: 104px;
   left: 0;
   position: absolute;
   width: 100%;
@@ -34,9 +34,9 @@ div.main_footer {
 img.s_img {
   bottom: 0;
   left: 0;
-  height: 115px;
+  height: 104px;
   position: absolute;
-  width: 115px;
+  width: 104px;
   z-index: 100;
 }
 
@@ -60,10 +60,12 @@ label { text-align: center; display: block; }
 
 .blank {
   .blank_section, .claim_username_label { display: block; }
+  .blank_section { margin-top: 5px }
+  .claim_username_label { margin-top: 10px }
   .email_entered_section, .thankyou { display: none; }
 }
 .email_entered {
-  .email_entered_section, .claim_username_label { display: block; }
+  .email_entered_section, .claim_username_label { display: block; margin-top: 5px }
   .blank_section, .thankyou { display: none; }
 }
 .form_submitted {
@@ -89,7 +91,7 @@ div.input_box {
   font-family: 'News Cycle', sans-serif;
   font-size: 15px;
   height: 50px;
-  margin-bottom: 37px;
+  margin-bottom: 45px;
   margin-right: 86px;
   position: absolute;
   right: 0;
@@ -159,7 +161,7 @@ input:focus {
 .mail_icon {
   background: url(/assets/mail_icon_rounded.png) no-repeat center -1px;
   border: 0;
-  right: 9px;
+  right: -7px;
   height: 18px;
   opacity: 0.3;
   outline: none;
@@ -171,6 +173,7 @@ input:focus {
 
 .email_field input[type=text] {
   position: absolute;
+  width: 420px;
 }
 
 .claim_username_label {
@@ -223,4 +226,9 @@ input:focus {
 }
 :-moz-placeholder { /* Firefox 18- */
   opacity: 0.4;
+}
+
+.signup_email_label {
+  margin-bottom: 5px;
+  width: 420px;
 }

@@ -14,7 +14,7 @@
       .send_tweet
         = link_to 'Tweet this', 'http://twitter.com/intent/tweet?text=I+just+reserved+my+username+at+steelos.com,+the+new+kingdom+of+style.&via=steelos&related=steelos'
       .blank_section
-        = f.label "Toss us your email address and we'll keep you posted on our launch.", class: 'signup_email_label'
+        %label.signup_email_label Toss us your email address and we'll keep you posted on our launch.
         .email_field
           = f.text_field :email, class: 'email_input_field', placeholder: 'email@example.com'
           = f.submit 'Submit', class: 'mail_icon'
@@ -25,7 +25,7 @@
 
       .email_entered_section
         = f.text_field :username
-        = f.label "Give us a tweet and the username is yours", class: 'signup_username_label'
+        %label.signup_username_label Give us a tweet and the username is yours.
         = f.label "That username is already claimed!", class: 'signup_username_error'
         = f.submit "Submit", class: 'signup_username_submit'
 
