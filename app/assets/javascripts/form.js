@@ -49,13 +49,16 @@
           self.$el.siblings('.signup_username_submit').removeClass('error').addClass('valid');
           self.$el.siblings('.signup_username_label').show();
           self.$el.siblings('.signup_username_error').hide();
+          self.is_validated = true;
         })
         .fail(function() {
           self.$el.siblings('.signup_username_submit').addClass('error').removeClass('valid');
           self.$el.siblings('.signup_username_label').hide();
           self.$el.siblings('.signup_username_error').show();
+          self.is_validated = false;
         });
     }
+    this.is_validated = false;
   }
 
   var Form = {
@@ -78,9 +81,11 @@
         return false;
       });
 
-      twttr.events.bind('tweet', function(event) {
-        self.submit_form();
-      });
+      if (twttr) {
+        twttr.events.bind('tweet', function(event) {
+          self.submit_form();
+        });
+      }
 
       this.$el.find('#signup_email').on('focus', function() {
         self.$el.find('.mail_icon').css('opacity', 1);
@@ -101,6 +106,13 @@
           self.render_stage();
         }
       });
+
+      this.$el.find('.signup_username_submit').on('click', function(e) {
+        if (!self.username_validator.is_validated) {
+          e.stopImmediatePropagation();
+          return false;
+        }
+      });
     },
 
     handle_submit: function(e) {
@@ -118,9 +130,6 @@
         return;
       }
       else if (this.stage === 'email_entered') {
-        this.username_validator.valid().done(function() {
-          self.enter_username();
-        });
         return;
       }
     },

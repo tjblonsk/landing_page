@@ -12,7 +12,6 @@
   %div.input_box
     = form_for(@signup, remote: true) do |f|
       .send_tweet
-        = link_to 'Tweet this', 'http://twitter.com/intent/tweet?text=I+just+reserved+my+username+at+steelos.com,+the+new+kingdom+of+style.&via=steelos&related=steelos'
       .blank_section
         %label.signup_email_label Toss us your email address and we'll keep you posted on our launch.
         .email_field
@@ -24,9 +23,9 @@
         Want to reserve a username?
 
       .email_entered_section
-        = f.text_field :username
+        = f.text_field :username, placeholder: 'Choose a username'
         %label.signup_username_label Give us a tweet and the username is yours.
         = f.label "That username is already claimed!", class: 'signup_username_error'
-        = f.submit "Submit", class: 'signup_username_submit'
+        = link_to 'Tweet this', 'http://twitter.com/intent/tweet?text=I+just+reserved+my+username+at+steelos.com,+the+new+kingdom+of+style.&via=steelos&related=steelos', class: 'signup_username_submit'
 
       .thankyou Thank you for your submission. We'll email you when we're ready!
