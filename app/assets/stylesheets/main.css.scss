@@ -40,9 +40,13 @@ img.s_img {
   z-index: 100;
 }
 
+.s_img_link {
+  border: 0;
+}
+
 span.main_text, span.minor_text {
   color: white;
-  float: left;
+  display: block;
   font-family: 'News Cycle', sans-serif;
 }
 
@@ -77,10 +81,9 @@ label { text-align: center; display: block; }
 .email_entered_section { position: relative; width: 402px; }
 div.text_container {
   bottom: 0;
-  float: left;
-  height: 60px;
+  height: 100px;
   margin-left: 150px;
-  margin-bottom: 45px;
+  margin-bottom: 5px;
   position: absolute;
   z-index: 100;
 }
