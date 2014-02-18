@@ -75,6 +75,8 @@
 
     bind_events: function() {
       var self = this;
+      self.formSubmitted = false;
+
       this.$el.on('submit', function(e) {
         e.preventDefault();
         self.handle_submit();
@@ -83,7 +85,12 @@
 
       if (twttr) {
         twttr.events.bind('tweet', function(event) {
-          self.submit_form();
+          var interval = window.setInterval(function() {
+            if (!self.formSubmitted) {
+              self.submit_form();
+              clearInterval(interval);
+            }
+          }, 200);
         });
       }
 
@@ -167,6 +174,7 @@
         data: self.$el.serialize(),
         dataType: 'json'
       }).done(function() {
+        self.formSubmitted = true;
         self.stage = 'form_submitted';
         // transition form to show submission confirmation
         self.render_stage();
