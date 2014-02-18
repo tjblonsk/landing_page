@@ -301,7 +301,7 @@ and (orientation : portrait) {
   div.email_field input[type="text"] {
     font-size: 40px;
     height: 70px;
-    margin-left: 210px;
+    position: relative;
     width: 530px;
   }
 
