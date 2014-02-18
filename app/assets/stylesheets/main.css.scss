@@ -236,3 +236,158 @@ input:focus {
   margin-bottom: 5px;
   width: 420px;
 }
+
+@media only screen
+and (max-device-width : 568px)
+and (orientation : portrait) {
+
+  div.main_footer {
+    height: 100%;
+  }
+
+  img.s_img {
+    height: 200px;
+    width: 200px;
+  }
+
+  div.text_container {
+    height: auto;
+    margin: auto;
+    text-align: center;
+    top: 0;
+    width: 100%;
+  }
+
+  span.main_text {
+    font-size: 130px;
+    line-height: 1;
+    padding: 40px;
+  }
+
+  span.minor_text {
+    font-size: 50px;
+    padding: 0 40px 40px 40px;
+  }
+
+  div.input_box {
+    bottom: auto;
+    font-size: 40px;
+    margin: auto;
+    top: 600px;
+    width: 100%;
+  }
+
+  div.input_box input[type="checkbox"] {
+    height: 50px;
+    width: 50px;
+  }
+
+  div.blank_section {
+    width: auto;
+  }
+
+  label.signup_email_label {
+    padding: 0 210px;
+    width: auto;
+  }
+
+  div.email_field {
+    position: relative;
+    width: 540px;
+    height: 25px;
+    text-align: center;
+    padding-left: 210px;
+  }
+
+  div.email_field input[type="text"] {
+    font-size: 40px;
+    height: 70px;
+    width: 530px;
+  }
+
+  input.mail_icon {
+    right: 5px;
+    top: 35px;
+  }
+
+  .blank .claim_username_label {
+    margin-top: 156px;
+  }
+
+  span.checkboxbutton_on {
+    height: 50px;
+    width: 50px;
+  }
+
+  span.checkboxbutton {
+    height: 50px;
+    width: 50px;
+  }
+
+  #signup_username {
+    font-size: 40px;
+    margin-left: 280px;
+    padding: 30px;
+    text-align: left;
+  }
+
+  div.email_entered_section {
+    width: auto;
+  }
+
+  .signup_username_submit {
+    right: 250px;
+    top: 40px;
+  }
+
+}
+
+@media only screen
+and (max-device-width : 568px)
+and (orientation : landscape) {
+
+  div.main_footer {
+    height: 100%;
+  }
+
+  div.text_container {
+    height: auto;
+    margin: auto;
+    text-align: center;
+    top: 0;
+    width: 100%;
+  }
+
+  span.main_text {
+    font-size: 80px;
+    line-height: 1;
+    padding: 20px;
+  }
+
+  span.minor_text {
+    font-size: 35px;
+    padding: 0 180px 40px 180px;
+  }
+
+  div.input_box {
+    font-size: 25px;
+    margin-bottom: 120px;
+    margin-right: 320px;
+  }
+
+  .blank .claim_username_label {
+    font-size: 26px;
+    margin-top: 65px;
+  }
+
+  span.checkboxbutton {
+    height: 30px;
+    width: 30px;
+  }
+
+  .signup_username_label {
+    font-size: 26px;
+    padding: 0 40px;
+  }
+
+}
