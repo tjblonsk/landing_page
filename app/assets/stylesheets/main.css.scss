@@ -346,6 +346,10 @@ and (orientation : portrait) {
     width: auto;
   }
 
+  .hp-logo {
+    display: none;
+  }
+
 }
 
 @media only screen
@@ -396,4 +400,17 @@ and (orientation : landscape) {
     padding: 0 40px;
   }
 
+  .hp-logo {
+    display: none;
+  }
+
+}
+
+.hp-logo {
+  height: 124px;
+  left: 50%;
+  margin: -62px 0 0 -375px;
+  position: fixed;
+  top: 42%;
+  width: 749px;
 }
