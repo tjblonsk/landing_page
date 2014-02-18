@@ -35,8 +35,7 @@ $(function(){
    * Homepage image
    */
   window.resizeBannerImage = function() {
-    console.log('resizing')
-    var debug = true;
+    var debug = false;
     var $img = $('.landing_img');
     var windowHeight = $(window).height();
     var windowWidth = $(window).width();
