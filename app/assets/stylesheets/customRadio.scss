@@ -7,7 +7,7 @@
     cursor: pointer;
     /* Next 2 lines IE8 */
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);    
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
 }
 .radiobutton
 {
@@ -39,19 +39,19 @@
 .hidecheckbox
 {
     opacity: 0;
-    width: 15px;
-    height:15px;
+    width: 25px;
+    height:25px;
     clear: none;
     cursor: pointer;
     /* Next 2 lines IE8 */
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);    
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
 }
 .checkboxbutton
 {
     background: #000;
-    width: 15px;
-    height:15px;
+    width: 25px;
+    height:25px;
     background-repeat:no-repeat;
     background-position: left center;
     vertical-align:middle;
@@ -65,12 +65,12 @@
 }
 .checkboxbutton_on
 {
-    background: url('/assets/checkbox.png') no-repeat center center;
+    background: url('/assets/checkbox-large.png') no-repeat center center;
     width: 15px;
     height:15px;
-    background-position: left center;    
+    background-position: center center;
     background-repeat:no-repeat;
-    vertical-align:middle;    
+    vertical-align:middle;
     margin-right:0px;
     margin-top: -1px;
     display:inline-block;
